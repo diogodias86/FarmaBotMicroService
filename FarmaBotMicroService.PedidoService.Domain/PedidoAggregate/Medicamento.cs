@@ -11,5 +11,6 @@ namespace FarmaBotMicroService.PedidoService.Domain.PedidoAggregate
         public string Nome { get; set; }
 
         public decimal Preco { get; set; }
+        public Pedido Pedido { get; set; }
     }
 }
