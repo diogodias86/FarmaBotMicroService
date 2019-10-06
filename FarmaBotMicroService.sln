@@ -37,7 +37,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.Medica
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_UnitTests", "_UnitTests", "{0E742729-FDC9-49D5-87CF-13C500F9E303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.MedicamentoService.Tests", "FarmaBotMicroService.MedicamentoService.Tests\FarmaBotMicroService.MedicamentoService.Tests.csproj", "{2C534A63-7691-41AB-82AB-B863EFCEB5D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.MedicamentoService.Tests", "FarmaBotMicroService.MedicamentoService.Tests\FarmaBotMicroService.MedicamentoService.Tests.csproj", "{2C534A63-7691-41AB-82AB-B863EFCEB5D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Infra", "FarmaBotMicroService.PedidoService.Infra\FarmaBotMicroService.PedidoService.Infra.csproj", "{9E7F34AD-1C33-491B-8CF5-5799B25B5D86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Application", "FarmaBotMicroService.PedidoService.Application\FarmaBotMicroService.PedidoService.Application.csproj", "{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.PedidoService.Service.Api", "FarmaBotMicroService.PedidoService.Service.Api\FarmaBotMicroService.PedidoService.Service.Api.csproj", "{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +79,18 @@ Global
 		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E7F34AD-1C33-491B-8CF5-5799B25B5D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7F34AD-1C33-491B-8CF5-5799B25B5D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7F34AD-1C33-491B-8CF5-5799B25B5D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7F34AD-1C33-491B-8CF5-5799B25B5D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +111,9 @@ Global
 		{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F} = {109FB775-8C86-4D99-A006-E4C51145E77F}
 		{E0AE2424-1732-4069-A4A6-19395F1C04C5} = {5EE16B73-7614-4442-9D42-650EF527A265}
 		{2C534A63-7691-41AB-82AB-B863EFCEB5D7} = {0E742729-FDC9-49D5-87CF-13C500F9E303}
+		{9E7F34AD-1C33-491B-8CF5-5799B25B5D86} = {EB4CC5CF-2235-417D-8B1D-B571C3FA2818}
+		{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B} = {3F772B6B-841C-45DB-8D64-0A3442F8790F}
+		{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E} = {CD9FBA1F-8517-4DE8-9D1F-83C17056C51C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58340097-35B9-4CBE-A815-9FB77550F189}
