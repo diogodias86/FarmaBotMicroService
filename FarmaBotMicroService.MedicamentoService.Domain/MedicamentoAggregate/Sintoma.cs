@@ -8,5 +8,7 @@ namespace FarmaBotMicroService.MedicamentoService.Domain.MedicamentoAggregate
     {
         public Guid Id { get; set; }
         public string Descricao { get; set; }
+
+        public Medicamento Medicamento { get; set; }
     }
 }

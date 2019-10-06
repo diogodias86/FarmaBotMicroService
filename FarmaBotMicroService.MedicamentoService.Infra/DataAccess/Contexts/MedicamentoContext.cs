@@ -11,7 +11,7 @@ namespace FarmaBotMicroService.MedicamentoService.Infra.DataAccess.Contexts
 
         public MedicamentoContext()
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

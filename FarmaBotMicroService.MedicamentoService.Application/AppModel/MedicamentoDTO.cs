@@ -11,6 +11,6 @@ namespace FarmaBotMicroService.MedicamentoService.Application.AppModel
 
         public decimal Preco { get; set; }
 
-        public List<SintomaDTO> Sintomas { get; set; }
+        public List<SintomaDTO> Sintomas { get; set; } = new List<SintomaDTO>();
     }
 }

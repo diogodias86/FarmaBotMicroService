@@ -14,7 +14,8 @@ namespace FarmaBotMicroService.MedicamentoService.Service.Api.Contexts
 
         public MedicamentosDbContext()
         {
-            Database.EnsureCreated();
+            //Database.EnsureDeleted();
+            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

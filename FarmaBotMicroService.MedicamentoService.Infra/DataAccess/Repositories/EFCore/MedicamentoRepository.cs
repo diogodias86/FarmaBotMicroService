@@ -1,6 +1,7 @@
 ﻿using FarmaBotMicroService.MedicamentoService.Domain.Interfaces.Repositories;
 using FarmaBotMicroService.MedicamentoService.Domain.MedicamentoAggregate;
 using FarmaBotMicroService.MedicamentoService.Infra.DataAccess.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
@@ -39,7 +40,7 @@ namespace FarmaBotMicroService.MedicamentoService.Infra.DataAccess.Repositories.
 
         public void Update(Medicamento medicamento)
         {
-            _context.Medicamentos.Update(medicamento);
+            _context.Entry(medicamento).State = EntityState.Modified;
             _context.SaveChanges();
         }
     }

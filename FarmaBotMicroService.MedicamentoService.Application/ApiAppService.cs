@@ -22,7 +22,7 @@ namespace FarmaBotMicroService.MedicamentoService.Application
         //====== COMMANDS ======
         public void AddMedicamento(MedicamentoDTO medicamentoDTO)
         {
-            _queue.Enqueue(new AddMedicamentoCommand(new Medicamento
+            _queue.EnqueueAsync(new AddMedicamentoCommand(new Medicamento
             {
                 Nome = medicamentoDTO.Nome,
                 Preco = medicamentoDTO.Preco
@@ -31,7 +31,7 @@ namespace FarmaBotMicroService.MedicamentoService.Application
 
         public void UpdateMedicamento(MedicamentoDTO medicamentoDTO)
         {
-            _queue.Enqueue(new UpdateMedicamentoCommand(new Medicamento
+            _queue.EnqueueAsync(new UpdateMedicamentoCommand(new Medicamento
             {
                 Id = medicamentoDTO.Id,
                 Nome = medicamentoDTO.Nome,
@@ -41,7 +41,7 @@ namespace FarmaBotMicroService.MedicamentoService.Application
 
         public void DeleteMedicamento(Guid id)
         {
-            _queue.Enqueue(new DeleteMedicamentoCommand(new Medicamento
+            _queue.EnqueueAsync(new DeleteMedicamentoCommand(new Medicamento
             {
                 Id = id
             }));

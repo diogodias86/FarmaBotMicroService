@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FarmaBotMicroService.MedicamentoService.Application\FarmaBotMicroService.MedicamentoService.Application.csproj" />
+    <ProjectReference Include="..\FarmaBotMicroService.MedicamentoService.Infra\FarmaBotMicroService.MedicamentoService.Infra.csproj" />
   </ItemGroup>
 
 </Project>

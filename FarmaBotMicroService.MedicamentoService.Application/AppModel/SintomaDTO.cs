@@ -8,5 +8,6 @@ namespace FarmaBotMicroService.MedicamentoService.Application.AppModel
     {
         public Guid Id { get; set; }
         public string Descricao { get; set; }
+        public MedicamentoDTO Medicamento { get; set; }
     }
 }
