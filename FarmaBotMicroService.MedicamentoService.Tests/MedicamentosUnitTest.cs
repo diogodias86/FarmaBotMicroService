@@ -6,9 +6,8 @@ using FarmaBotMicroService.MedicamentoService.Infra.DataAccess.Contexts;
 using FarmaBotMicroService.MedicamentoService.Infra.DataAccess.Repositories.EFCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 
@@ -39,21 +38,21 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
 
             Assert.IsTrue(response.IsSuccessStatusCode);
 
-            for (var i = 0; i <= 10; i++)
-            {
-                var data = JsonConvert.SerializeObject(
-                    new MedicamentoDTO
-                    {
-                        Nome = "Medicamento " + i,
-                        Preco = i
-                    });
+            //for (var i = 0; i <= 10; i++)
+            //{
+            //    var data = JsonConvert.SerializeObject(
+            //        new MedicamentoDTO
+            //        {
+            //            Nome = "Medicamento " + i,
+            //            Preco = i
+            //        });
 
-                var _httpClient = new HttpClient();
-                var response = _httpClient.PostAsync("http://localhost:60737/api/medicamento",
-                    new StringContent(data, Encoding.UTF8, "application/json")).Result;
+            //    var _httpClient = new HttpClient();
+            //    var response = _httpClient.PostAsync("http://localhost:60737/api/medicamento",
+            //        new StringContent(data, Encoding.UTF8, "application/json")).Result;
 
-                Assert.IsTrue(response.IsSuccessStatusCode);
-            }
+            //    Assert.IsTrue(response.IsSuccessStatusCode);
+            //}
         }
 
         [TestMethod]
@@ -62,7 +61,7 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
             var _httpClient = new HttpClient();
             var response = _httpClient.GetAsync("http://localhost:60737/api/medicamento").Result;
 
-            var data = response.Content.ReadAsStringAsync().Result;
+            Debug.WriteLine(response.Content.ReadAsStringAsync().Result);
 
             Assert.IsTrue(response.IsSuccessStatusCode);
         }
@@ -80,7 +79,7 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
 
             apiAppService.AddMedicamento(new MedicamentoDTO
             {
-                Nome = "Dorflex via Queue",
+                Nome = "Dorflex via Queue 2",
                 Preco = 5.00m
             });
         }
