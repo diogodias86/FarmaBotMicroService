@@ -1,0 +1,41 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using FarmaBotMicroService.DiagnosticoService.Application.AppModel;
+using FarmaBotMicroService.DiagnosticoService.Service.Api.Contexts;
+using System.Linq;
+using FarmaBotMicroService.DiagnosticoService.Application;
+using FarmaBotMicroService.DiagnosticoService.Infra.DataAccess.Repositories;
+
+namespace FarmaBotMicroService.DiagnosticoService.Service.Api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class DiagnosticoController : ControllerBase
+    {
+        private readonly DiagnosticoDbContext _context;
+
+        public DiagnosticoController(DiagnosticoDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: api/Diagnostico
+        [HttpGet]
+        public IActionResult GetDiagnostico(string sintomas)
+        {
+            var apiAppService = new ApiAppService(
+                new Domain.Services.DiagnosticoQueryService(
+                    new DiagnosticoQueryEFRepository(
+                        new DiagnosticoDbContext()
+                    )
+                )
+            );
+
+            var result = apiAppService.Diagnosticar(sintomas);
+
+            return new JsonResult(result.Select(m => new { m.Nome, m.Preco }));
+        }
+    }
+}
