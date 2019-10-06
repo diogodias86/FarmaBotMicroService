@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PedidoService", "PedidoService", "{9EF24578-A178-4C13-B548-2C4A44196BE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Service", "1 - Service", "{CD9FBA1F-8517-4DE8-9D1F-83C17056C51C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{3F772B6B-841C-45DB-8D64-0A3442F8790F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{4D75151B-1A46-4302-B56C-2720D334E25C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{EB4CC5CF-2235-417D-8B1D-B571C3FA2818}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Domain", "FarmaBotMicroService.PedidoService.Domain\FarmaBotMicroService.PedidoService.Domain.csproj", "{6F14CE22-B207-45C5-BD24-6AC38EDF7173}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MedicamentoService", "MedicamentoService", "{BEF94B4A-1348-4BDC-ABFC-EAED320FC017}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Service", "1 - Service", "{5EE16B73-7614-4442-9D42-650EF527A265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{109FB775-8C86-4D99-A006-E4C51145E77F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{90C38A6F-7F1E-4447-92D7-7307BBD881DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{4A6BBEAB-A991-4542-8D4B-862BA672C465}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.MedicamentoService.Domain", "FarmaBotMicroService.MedicamentoService.Domain\FarmaBotMicroService.MedicamentoService.Domain.csproj", "{CB6F8695-3256-4A03-A7A6-171F5A2C08F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.MedicamentoService.Infra", "FarmaBotMicroService.MedicamentoService.Infra\FarmaBotMicroService.MedicamentoService.Infra.csproj", "{BAC06023-60EA-4810-9CC9-344F213FDD2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.MedicamentoService.Service.Api", "FarmaBotMicroService.MedicamentoService.Service.Api\FarmaBotMicroService.MedicamentoService.Service.Api.csproj", "{D1AB4E41-FCB4-4044-99E1-55AB5AB2D437}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.MedicamentoService.Application", "FarmaBotMicroService.MedicamentoService.Application\FarmaBotMicroService.MedicamentoService.Application.csproj", "{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.MedicamentoService.Service.WebJob", "FarmaBotMicroService.MedicamentoService.Service.WebJob\FarmaBotMicroService.MedicamentoService.Service.WebJob.csproj", "{E0AE2424-1732-4069-A4A6-19395F1C04C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_UnitTests", "_UnitTests", "{0E742729-FDC9-49D5-87CF-13C500F9E303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.MedicamentoService.Tests", "FarmaBotMicroService.MedicamentoService.Tests\FarmaBotMicroService.MedicamentoService.Tests.csproj", "{2C534A63-7691-41AB-82AB-B863EFCEB5D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F14CE22-B207-45C5-BD24-6AC38EDF7173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F14CE22-B207-45C5-BD24-6AC38EDF7173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F14CE22-B207-45C5-BD24-6AC38EDF7173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F14CE22-B207-45C5-BD24-6AC38EDF7173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6F8695-3256-4A03-A7A6-171F5A2C08F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB6F8695-3256-4A03-A7A6-171F5A2C08F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB6F8695-3256-4A03-A7A6-171F5A2C08F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB6F8695-3256-4A03-A7A6-171F5A2C08F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC06023-60EA-4810-9CC9-344F213FDD2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC06023-60EA-4810-9CC9-344F213FDD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC06023-60EA-4810-9CC9-344F213FDD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC06023-60EA-4810-9CC9-344F213FDD2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1AB4E41-FCB4-4044-99E1-55AB5AB2D437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1AB4E41-FCB4-4044-99E1-55AB5AB2D437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1AB4E41-FCB4-4044-99E1-55AB5AB2D437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1AB4E41-FCB4-4044-99E1-55AB5AB2D437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AE2424-1732-4069-A4A6-19395F1C04C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AE2424-1732-4069-A4A6-19395F1C04C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AE2424-1732-4069-A4A6-19395F1C04C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AE2424-1732-4069-A4A6-19395F1C04C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C534A63-7691-41AB-82AB-B863EFCEB5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CD9FBA1F-8517-4DE8-9D1F-83C17056C51C} = {9EF24578-A178-4C13-B548-2C4A44196BE1}
+		{3F772B6B-841C-45DB-8D64-0A3442F8790F} = {9EF24578-A178-4C13-B548-2C4A44196BE1}
+		{4D75151B-1A46-4302-B56C-2720D334E25C} = {9EF24578-A178-4C13-B548-2C4A44196BE1}
+		{EB4CC5CF-2235-417D-8B1D-B571C3FA2818} = {9EF24578-A178-4C13-B548-2C4A44196BE1}
+		{6F14CE22-B207-45C5-BD24-6AC38EDF7173} = {4D75151B-1A46-4302-B56C-2720D334E25C}
+		{5EE16B73-7614-4442-9D42-650EF527A265} = {BEF94B4A-1348-4BDC-ABFC-EAED320FC017}
+		{109FB775-8C86-4D99-A006-E4C51145E77F} = {BEF94B4A-1348-4BDC-ABFC-EAED320FC017}
+		{90C38A6F-7F1E-4447-92D7-7307BBD881DC} = {BEF94B4A-1348-4BDC-ABFC-EAED320FC017}
+		{4A6BBEAB-A991-4542-8D4B-862BA672C465} = {BEF94B4A-1348-4BDC-ABFC-EAED320FC017}
+		{CB6F8695-3256-4A03-A7A6-171F5A2C08F8} = {90C38A6F-7F1E-4447-92D7-7307BBD881DC}
+		{BAC06023-60EA-4810-9CC9-344F213FDD2D} = {4A6BBEAB-A991-4542-8D4B-862BA672C465}
+		{D1AB4E41-FCB4-4044-99E1-55AB5AB2D437} = {5EE16B73-7614-4442-9D42-650EF527A265}
+		{D4B3F2BE-571B-4C9D-86F7-67D3BC4C531F} = {109FB775-8C86-4D99-A006-E4C51145E77F}
+		{E0AE2424-1732-4069-A4A6-19395F1C04C5} = {5EE16B73-7614-4442-9D42-650EF527A265}
+		{2C534A63-7691-41AB-82AB-B863EFCEB5D7} = {0E742729-FDC9-49D5-87CF-13C500F9E303}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58340097-35B9-4CBE-A815-9FB77550F189}
+	EndGlobalSection
+EndGlobal
