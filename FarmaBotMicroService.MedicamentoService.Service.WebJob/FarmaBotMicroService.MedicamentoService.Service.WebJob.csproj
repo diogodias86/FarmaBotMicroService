@@ -18,6 +18,9 @@
     <ProjectReference Include="..\FarmaBotMicroService.MedicamentoService.Infra\FarmaBotMicroService.MedicamentoService.Infra.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="appSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Settings.job">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
