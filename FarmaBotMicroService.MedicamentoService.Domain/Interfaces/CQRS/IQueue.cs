@@ -10,7 +10,5 @@ namespace FarmaBotMicroService.MedicamentoService.Domain.Interfaces.CQRS
     {
         Task EnqueueAsync(QueueMessage message);
         Task<string> DequeueAsync(string queueName);
-        void Enqueue(QueueMessage message);
-        string Dequeue(string queueName);
     }
 }

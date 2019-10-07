@@ -1,4 +1,5 @@
-﻿using FarmaBotMicroService.PedidoService.Application.AppModel;
+﻿using AutoMapper;
+using FarmaBotMicroService.PedidoService.Application.AppModel;
 using FarmaBotMicroService.PedidoService.Domain.CQRS.Commands;
 using FarmaBotMicroService.PedidoService.Domain.Interfaces.CQRS;
 using FarmaBotMicroService.PedidoService.Domain.PedidoAggregate;
@@ -12,70 +13,51 @@ namespace FarmaBotMicroService.PedidoService.Application
     public class ApiAppService
     {
         private readonly IQueue _queue;
+        private readonly IMapper _mapper;
         private readonly Domain.Services.PedidoService _pedidoQueryService;
 
-        public ApiAppService(IQueue queue, Domain.Services.PedidoService service)
+        public ApiAppService(IQueue queue, IMapper mapper, Domain.Services.PedidoService service)
         {
             _queue = queue;
+            _mapper = mapper;
             _pedidoQueryService = service;
         }
 
         //====== COMMANDS ======
         public void AddPedido(PedidoDTO pedidoDTO)
         {
-            _queue.EnqueueAsync(new AddPedidoCommand(new Pedido
-            {
-                ClienteId = pedidoDTO.ClienteId,
-                Data = pedidoDTO.Data,
-                Endereco = pedidoDTO.Endereco
-            }));
+            var command = _mapper.Map<AddPedidoCommand>(pedidoDTO);
+            _queue.EnqueueAsync(command);
+
         }
 
         public void UpdatePedido(PedidoDTO pedidoDTO)
         {
-            _queue.EnqueueAsync(new UpdatePedidoCommand(new Pedido
-            {
-                Id = pedidoDTO.Id,
-                ClienteId = pedidoDTO.ClienteId,
-                Endereco = pedidoDTO.Endereco,
-                Data = pedidoDTO.Data
-            }));
+            var command = _mapper.Map<UpdatePedidoCommand>(pedidoDTO);
+            _queue.EnqueueAsync(command);
         }
 
-        public void DeleteMedicamento(Guid id)
+        public void DeletePedido(Guid id)
         {
-            _queue.EnqueueAsync(new DeletePedidoCommand(new Pedido
-            {
-                Id = id
-            }));
+            var command = _mapper.Map<DeletePedidoCommand>(id);
+            _queue.EnqueueAsync(command);
         }
 
         //====== QUERIES ======
         public PedidoDTO GetPedido(Guid id)
         {
             var pedido = _pedidoQueryService.GetPedido(id);
-            return new PedidoDTO
-            {
-                Id = pedido.Id,
-                ClienteId = pedido.ClienteId,
-                Endereco = pedido.Endereco,
-                Data = pedido.Data
-            };
+            var pedidoDTO = _mapper.Map<PedidoDTO>(pedido);
+            return pedidoDTO;
+
         }
 
         public IEnumerable<PedidoDTO> GetAllPedidos()
         {
             var pedidos = _pedidoQueryService.GetAllPedidos();
-
-            return pedidos.Select((m) =>
-                new PedidoDTO
-                {
-                    Id = m.Id,
-                    ClienteId = m.ClienteId,
-                    Endereco = m.Endereco,
-                    Data = m.Data
-                });
-        }
+            return _mapper.Map<IEnumerable<PedidoDTO>>(pedidos);
 
         }
+
+    }
 }

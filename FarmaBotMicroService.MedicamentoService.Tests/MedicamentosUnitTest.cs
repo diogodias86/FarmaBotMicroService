@@ -1,5 +1,6 @@
 using FarmaBotMicroService.MedicamentoService.Application;
 using FarmaBotMicroService.MedicamentoService.Application.AppModel;
+using FarmaBotMicroService.MedicamentoService.Application.AutoMapper;
 using FarmaBotMicroService.MedicamentoService.Domain.CQRS.Commands;
 using FarmaBotMicroService.MedicamentoService.Infra.CQRS;
 using FarmaBotMicroService.MedicamentoService.Infra.DataAccess.Contexts;
@@ -38,21 +39,6 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
 
             Assert.IsTrue(response.IsSuccessStatusCode);
 
-            //for (var i = 0; i <= 10; i++)
-            //{
-            //    var data = JsonConvert.SerializeObject(
-            //        new MedicamentoDTO
-            //        {
-            //            Nome = "Medicamento " + i,
-            //            Preco = i
-            //        });
-
-            //    var _httpClient = new HttpClient();
-            //    var response = _httpClient.PostAsync("http://localhost:60737/api/medicamento",
-            //        new StringContent(data, Encoding.UTF8, "application/json")).Result;
-
-            //    Assert.IsTrue(response.IsSuccessStatusCode);
-            //}
         }
 
         [TestMethod]
@@ -69,7 +55,10 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
         [TestMethod]
         public void Add_Medicamento_Queue()
         {
-            var apiAppService = new ApiAppService(new AzureStorageQueue(),
+            var dtoConfig = AutoMapperConfig.RegisterAllMappings();
+            var mapper = dtoConfig.CreateMapper();
+
+            var apiAppService = new ApiAppService(new AzureStorageQueue(), mapper,
                 new Domain.Services.MedicamentoService(
                     new MedicamentoRepository(
                         new MedicamentoContext()
@@ -77,10 +66,16 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
                 )
             );
 
+            var sintomas = new List<SintomaDTO>();
+            sintomas.Add(new SintomaDTO { Descricao = "dor de barriga" });
+            sintomas.Add(new SintomaDTO { Descricao = "dor na nuca" });
+            sintomas.Add(new SintomaDTO { Descricao = "ânsia" });
+
             apiAppService.AddMedicamento(new MedicamentoDTO
             {
-                Nome = "Dorflex via Queue 2",
-                Preco = 5.00m
+                Nome = "Dorflex via Queue 3",
+                Preco = 5.00m,
+                Sintomas = sintomas
             });
         }
 
@@ -96,7 +91,7 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
             );
 
             var queue = new AzureStorageQueue();
-            var message = queue.Dequeue(AddMedicamentoCommand.ConstQueueName);
+            var message = queue.DequeueAsync(AddMedicamentoCommand.ConstQueueName).Result;
 
             var command = JsonConvert.DeserializeObject<AddMedicamentoCommand>(message);
             _commandHandler.Handle(command);

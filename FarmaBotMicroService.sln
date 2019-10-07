@@ -43,9 +43,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.Pedido
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Application", "FarmaBotMicroService.PedidoService.Application\FarmaBotMicroService.PedidoService.Application.csproj", "{01F57DAE-7B34-4BF6-891D-D8FEC27DE66B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.PedidoService.Service.Api", "FarmaBotMicroService.PedidoService.Service.Api\FarmaBotMicroService.PedidoService.Service.Api.csproj", "{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Service.Api", "FarmaBotMicroService.PedidoService.Service.Api\FarmaBotMicroService.PedidoService.Service.Api.csproj", "{E3A56AFF-1C21-4373-BEC8-D1D589FF9B8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.PedidoService.Service.WebJob", "FarmaBotMicroService.PedidoService.Service.WebJob\FarmaBotMicroService.PedidoService.Service.WebJob.csproj", "{0FF9125A-B845-4A61-9BC4-032651CBCF7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Service.WebJob", "FarmaBotMicroService.PedidoService.Service.WebJob\FarmaBotMicroService.PedidoService.Service.WebJob.csproj", "{0FF9125A-B845-4A61-9BC4-032651CBCF7E}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiagnosticoService", "DiagnosticoService", "{5F2FC894-3D63-4B76-AC2B-3E26AE843A47}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Service", "1 - Service", "{B5B26EF4-B539-4251-BA52-246BAAE86882}"
@@ -56,15 +57,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{A79460EC-98BC-4869-8915-16A4811E5433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.DiagnosticoService.Domain", "FarmaBotMicroService.DiagnosticoService.Domain\FarmaBotMicroService.DiagnosticoService.Domain.csproj", "{DA51B577-DA5D-4319-8D34-4D5E1A4EC4FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.DiagnosticoService.Domain", "FarmaBotMicroService.DiagnosticoService.Domain\FarmaBotMicroService.DiagnosticoService.Domain.csproj", "{DA51B577-DA5D-4319-8D34-4D5E1A4EC4FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.DiagnosticoService.Infra", "FarmaBotMicroService.DiagnosticoService.Infra\FarmaBotMicroService.DiagnosticoService.Infra.csproj", "{361B8CA5-819E-49EC-A9C6-64793EECC340}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.DiagnosticoService.Infra", "FarmaBotMicroService.DiagnosticoService.Infra\FarmaBotMicroService.DiagnosticoService.Infra.csproj", "{361B8CA5-819E-49EC-A9C6-64793EECC340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.DiagnosticoService.Service.Api", "FarmaBotMicroService.DiagnosticoService.Service.Api\FarmaBotMicroService.DiagnosticoService.Service.Api.csproj", "{709C9FEB-02A5-46FB-864B-91359FB7B3E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.DiagnosticoService.Service.Api", "FarmaBotMicroService.DiagnosticoService.Service.Api\FarmaBotMicroService.DiagnosticoService.Service.Api.csproj", "{709C9FEB-02A5-46FB-864B-91359FB7B3E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.DiagnosticoService.Application", "FarmaBotMicroService.DiagnosticoService.Application\FarmaBotMicroService.DiagnosticoService.Application.csproj", "{6CC24A15-8859-4419-BBE2-D1C32FBE938B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.DiagnosticoService.Application", "FarmaBotMicroService.DiagnosticoService.Application\FarmaBotMicroService.DiagnosticoService.Application.csproj", "{6CC24A15-8859-4419-BBE2-D1C32FBE938B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmaBotMicroService.DiagnosticoService.Tests", "FarmaBotMicroService.DiagnosticoService.Tests\FarmaBotMicroService.DiagnosticoService.Tests.csproj", "{6892DD3F-418C-4F9C-AC53-68789EF09A28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.DiagnosticoService.Tests", "FarmaBotMicroService.DiagnosticoService.Tests\FarmaBotMicroService.DiagnosticoService.Tests.csproj", "{6892DD3F-418C-4F9C-AC53-68789EF09A28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaBotMicroService.PedidoService.Tests", "FarmaBotMicroService.PedidoService.Tests\FarmaBotMicroService.PedidoService.Tests.csproj", "{E874CB79-BFA5-443B-998B-9A53F06788E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +139,10 @@ Global
 		{6892DD3F-418C-4F9C-AC53-68789EF09A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6892DD3F-418C-4F9C-AC53-68789EF09A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6892DD3F-418C-4F9C-AC53-68789EF09A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E874CB79-BFA5-443B-998B-9A53F06788E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E874CB79-BFA5-443B-998B-9A53F06788E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E874CB79-BFA5-443B-998B-9A53F06788E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E874CB79-BFA5-443B-998B-9A53F06788E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +176,7 @@ Global
 		{709C9FEB-02A5-46FB-864B-91359FB7B3E7} = {B5B26EF4-B539-4251-BA52-246BAAE86882}
 		{6CC24A15-8859-4419-BBE2-D1C32FBE938B} = {4B76EA31-691F-407C-956B-6A1548DE3673}
 		{6892DD3F-418C-4F9C-AC53-68789EF09A28} = {0E742729-FDC9-49D5-87CF-13C500F9E303}
+		{E874CB79-BFA5-443B-998B-9A53F06788E8} = {0E742729-FDC9-49D5-87CF-13C500F9E303}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {58340097-35B9-4CBE-A815-9FB77550F189}

@@ -53,14 +53,5 @@ namespace FarmaBotMicroService.MedicamentoService.Infra.CQRS
             return message.AsString;
         }
 
-        public void Enqueue(QueueMessage message)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Dequeue(string queueName)
-        {
-            return DequeueAsync(queueName).Result;
-        }
     }
 }

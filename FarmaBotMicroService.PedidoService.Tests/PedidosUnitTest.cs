@@ -1,5 +1,6 @@
 using FarmaBotMicroService.PedidoService.Application;
 using FarmaBotMicroService.PedidoService.Application.AppModel;
+using FarmaBotMicroService.PedidoService.Application.AutoMapper;
 using FarmaBotMicroService.PedidoService.Domain.CQRS.Commands;
 using FarmaBotMicroService.PedidoService.Infra.CQRS;
 using FarmaBotMicroService.PedidoService.Infra.DataAccess.Contexts;
@@ -8,6 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -35,38 +37,70 @@ namespace FarmaBotMicroService.PedidoService.Tests
                     });
 
             var _httpClient = new HttpClient();
-            var response = _httpClient.PostAsync("http://localhost:50219/api/pedido",
+            var response = _httpClient.PostAsync("https://localhost:44350/api/pedido",
                 new StringContent(data, Encoding.UTF8, "application/json")).Result;
 
             Assert.IsTrue(response.IsSuccessStatusCode);
-
-            for (var i = 0; i <= 10; i++)
-            {
-                var data2 = JsonConvert.SerializeObject(
-                    new MedicamentoDTO
-                    {
-                        Nome = "Medicamento " + i,
-                        Preco = i
-                    });
-
-                var _httpClient2 = new HttpClient();
-                var response2 = _httpClient2.PostAsync("http://localhost:60737/api/pedido",
-                    new StringContent(data2, Encoding.UTF8, "application/json")).Result;
-
-                Assert.IsTrue(response2.IsSuccessStatusCode);
-            }
         }
 
         [TestMethod]
         public void Recuperar_Todos_Pedidos()
         {
             var _httpClient = new HttpClient();
-            var response = _httpClient.GetAsync("http://localhost:60737/api/pedido").Result;
+            var response = _httpClient.GetAsync("https://localhost:44350/api/pedido").Result;
 
-            var data = response.Content.ReadAsStringAsync().Result;
+            Debug.WriteLine(response.Content.ReadAsStringAsync().Result);
 
             Assert.IsTrue(response.IsSuccessStatusCode);
         }
 
+        [TestMethod]
+        public void Add_Pedido_Queue()
+        {
+
+            var dtoConfig = AutoMapperConfig.RegisterAllMappings();
+            var mapper = dtoConfig.CreateMapper();
+
+            var apiAppService = new ApiAppService(new AzureStorageQueue(), mapper, 
+                new Domain.Services.PedidoService(
+                    new PedidoRepository(
+                        new PedidoContext()
+                    )
+                )
+            );
+
+            var medicamentos = new List<MedicamentoDTO>();
+            medicamentos.Add(new MedicamentoDTO { Nome = "Dipirona", Preco = 5.00M });
+            medicamentos.Add(new MedicamentoDTO { Nome = "Doril", Preco = 10.00M });
+            medicamentos.Add(new MedicamentoDTO { Nome = "Paracetamol", Preco = 15.00M });
+
+            apiAppService.AddPedido(new PedidoDTO
+            {
+                Data = DateTime.Now,
+                ClienteId = Guid.NewGuid(),
+                Endereco = "Rua São Jose, 120, Centro, Rio de Janeiro",
+                Medicamentos = medicamentos
+            });
+        }
+
+        [TestMethod]
+        public void Add_Pedido_Dequeue()
+        {
+            var _commandHandler = new CommandHandler(
+                new Domain.Services.PedidoService(
+                    new PedidoRepository(
+                        new PedidoContext()
+                    )
+                )
+            );
+
+            var queue = new AzureStorageQueue();
+            var message = queue.DequeueAsync(AddPedidoCommand.ConstQueueName).Result;
+
+            var command = JsonConvert.DeserializeObject<AddPedidoCommand>(message);
+            _commandHandler.Handle(command);
+        }
     }
+
 }
+

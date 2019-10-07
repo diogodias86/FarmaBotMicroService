@@ -11,6 +11,7 @@ namespace FarmaBotMicroService.DiagnosticoService.Tests
         [TestMethod]
         public void Diagnosticar()
         {
+
             var _httpClient = new HttpClient();
 
             var sintomas = "dor de cabeça";

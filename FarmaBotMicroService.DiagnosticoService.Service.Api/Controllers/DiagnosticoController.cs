@@ -7,6 +7,7 @@ using FarmaBotMicroService.DiagnosticoService.Service.Api.Contexts;
 using System.Linq;
 using FarmaBotMicroService.DiagnosticoService.Application;
 using FarmaBotMicroService.DiagnosticoService.Infra.DataAccess.Repositories;
+using FarmaBotMicroService.DiagnosticoService.Application.AutoMapper;
 
 namespace FarmaBotMicroService.DiagnosticoService.Service.Api.Controllers
 {
@@ -25,12 +26,15 @@ namespace FarmaBotMicroService.DiagnosticoService.Service.Api.Controllers
         [HttpGet]
         public IActionResult GetDiagnostico(string sintomas)
         {
+            var dtoConfig = AutoMapperConfig.RegisterAllMappings();
+            var mapper = dtoConfig.CreateMapper();
+
             var apiAppService = new ApiAppService(
                 new Domain.Services.DiagnosticoQueryService(
                     new DiagnosticoQueryEFRepository(
                         new DiagnosticoDbContext()
                     )
-                )
+                ), mapper
             );
 
             var result = apiAppService.Diagnosticar(sintomas);
