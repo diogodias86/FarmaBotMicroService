@@ -73,7 +73,7 @@ namespace FarmaBotMicroService.MedicamentoService.Tests
 
             apiAppService.AddMedicamento(new MedicamentoDTO
             {
-                Nome = "Dorflex via Queue 3",
+                Nome = "Doril",
                 Preco = 5.00m,
                 Sintomas = sintomas
             });

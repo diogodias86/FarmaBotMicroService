@@ -23,7 +23,7 @@ namespace FarmaBotMicroService.PedidoService.Tests
         public void Adicionar_Pedido()
         {
             
-            var medicamentoId = Guid.Parse("aa836f2e-ef06-4b9e-1acf-08d74a7b8e4e");
+            var medicamentoId = Guid.Parse("a63881ed-9133-410e-1a75-08d74c10b1cf");
 
             var itens = new List<ItemPedidoDTO>();
             itens.Add(new ItemPedidoDTO { MedicamentoId = medicamentoId, Preco = 20.00M, Quantidade = 20 });
@@ -70,7 +70,7 @@ namespace FarmaBotMicroService.PedidoService.Tests
                 )
             );
 
-            var medicamentoId = Guid.Parse("dbefeb9a-ba7f-4184-2c73-08d74a9e4145");
+            var medicamentoId = Guid.Parse("a63881ed-9133-410e-1a75-08d74c10b1cf");
 
             var itens = new List<ItemPedidoDTO>();
             itens.Add(new ItemPedidoDTO { MedicamentoId = medicamentoId, Preco = 20.00M, Quantidade = 20 });
