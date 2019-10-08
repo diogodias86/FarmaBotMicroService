@@ -35,7 +35,9 @@ namespace FarmaBotMicroService.PedidoService.Service.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<PedidoDTO>> GetPedidoDTO(Guid id)
         {
-            var pedidoDTO = await _context.Pedidos.FindAsync(id);
+            var pedidoDTO = await _context.Pedidos.Include(i => i.Itens)
+                                                .ThenInclude(m => m.Medicamento)
+                                                .Where(p=> p.Id == id).FirstOrDefaultAsync();
 
             if (pedidoDTO == null)
             {
