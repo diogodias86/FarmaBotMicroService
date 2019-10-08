@@ -37,9 +37,9 @@ namespace FarmaBotMicroService.PedidoService.Application
             _queue.EnqueueAsync(command);
         }
 
-        public void DeletePedido(Guid id)
+        public void DeletePedido(PedidoDTO pedidoDTO)
         {
-            var command = _mapper.Map<DeletePedidoCommand>(id);
+            var command = _mapper.Map<DeletePedidoCommand>(pedidoDTO);
             _queue.EnqueueAsync(command);
         }
 

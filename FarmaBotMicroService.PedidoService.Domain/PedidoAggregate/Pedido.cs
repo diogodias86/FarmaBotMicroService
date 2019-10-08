@@ -14,6 +14,6 @@ namespace FarmaBotMicroService.PedidoService.Domain.PedidoAggregate
 
         public string Endereco { get; set; }
 
-        public List<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
+        public List<ItemPedido> Itens { get; set; } = new List<ItemPedido>();
     }
 }

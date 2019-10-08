@@ -36,9 +36,9 @@ namespace FarmaBotMicroService.MedicamentoService.Application
 
         }
 
-        public void DeleteMedicamento(Guid id)
+        public void DeleteMedicamento(MedicamentoDTO medicamentoDTO)
         {
-            var command = _mapper.Map<DeleteMedicamentoCommand>(id);
+            var command = _mapper.Map<DeleteMedicamentoCommand>(medicamentoDTO);
             _queue.EnqueueAsync(command);
 
         }

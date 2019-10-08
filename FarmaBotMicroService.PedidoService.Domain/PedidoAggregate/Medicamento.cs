@@ -9,8 +9,7 @@ namespace FarmaBotMicroService.PedidoService.Domain.PedidoAggregate
         public Guid Id { get; set; }
 
         public string Nome { get; set; }
-
-        public decimal Preco { get; set; }
-        public Pedido Pedido { get; set; }
+        
+        public ItemPedido ItemPedido { get; set; }
     }
 }

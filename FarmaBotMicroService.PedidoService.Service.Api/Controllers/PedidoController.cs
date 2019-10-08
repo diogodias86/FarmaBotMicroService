@@ -25,7 +25,8 @@ namespace FarmaBotMicroService.PedidoService.Service.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PedidoDTO>>> GetPedidos()
         {
-            var result = await _context.Pedidos.Include(m => m.Medicamentos).ToListAsync();
+            var result = await _context.Pedidos.Include(i => i.Itens)
+                                                .ThenInclude( m=> m.Medicamento).ToListAsync();
 
             return result;
         }
@@ -80,10 +81,10 @@ namespace FarmaBotMicroService.PedidoService.Service.Api.Controllers
         {
             _context.Pedidos.Add(pedidoDTO);
 
-            foreach (var medicamento in pedidoDTO.Medicamentos)
+            foreach (var itemPedido in pedidoDTO.Itens)
             {
-                medicamento.Pedido = pedidoDTO;
-                _context.Medicamentos.Add(medicamento);
+                itemPedido.Pedido = pedidoDTO;
+                _context.Itens.Add(itemPedido);
             }
 
             await _context.SaveChangesAsync();

@@ -22,10 +22,11 @@ namespace FarmaBotMicroService.PedidoService.Tests
         [TestMethod]
         public void Adicionar_Pedido()
         {
-            var medicamentos = new List<MedicamentoDTO>();
-            medicamentos.Add(new MedicamentoDTO { Nome = "Dorflex", Preco = 5.00M });
-            medicamentos.Add(new MedicamentoDTO { Nome = "Ibuprofeno", Preco = 10.00M });
-            medicamentos.Add(new MedicamentoDTO { Nome = "Novalgina", Preco = 15.00M });
+            
+            var medicamentoId = Guid.Parse("aa836f2e-ef06-4b9e-1acf-08d74a7b8e4e");
+
+            var itens = new List<ItemPedidoDTO>();
+            itens.Add(new ItemPedidoDTO { MedicamentoId = medicamentoId, Preco = 20.00M, Quantidade = 20 });
 
             var data = JsonConvert.SerializeObject(
                     new PedidoDTO
@@ -33,7 +34,7 @@ namespace FarmaBotMicroService.PedidoService.Tests
                         Data = DateTime.Now,
                         ClienteId = Guid.NewGuid(),
                         Endereco = "Rua São Jose, 90, Centro, Rio de Janeiro",
-                        Medicamentos = medicamentos
+                        Itens = itens
                     });
 
             var _httpClient = new HttpClient();
@@ -69,17 +70,17 @@ namespace FarmaBotMicroService.PedidoService.Tests
                 )
             );
 
-            var medicamentos = new List<MedicamentoDTO>();
-            medicamentos.Add(new MedicamentoDTO { Nome = "Dipirona", Preco = 5.00M });
-            medicamentos.Add(new MedicamentoDTO { Nome = "Doril", Preco = 10.00M });
-            medicamentos.Add(new MedicamentoDTO { Nome = "Paracetamol", Preco = 15.00M });
+            var medicamentoId = Guid.Parse("dbefeb9a-ba7f-4184-2c73-08d74a9e4145");
+
+            var itens = new List<ItemPedidoDTO>();
+            itens.Add(new ItemPedidoDTO { MedicamentoId = medicamentoId, Preco = 20.00M, Quantidade = 20 });
 
             apiAppService.AddPedido(new PedidoDTO
             {
                 Data = DateTime.Now,
                 ClienteId = Guid.NewGuid(),
                 Endereco = "Rua São Jose, 120, Centro, Rio de Janeiro",
-                Medicamentos = medicamentos
+                Itens = itens
             });
         }
 

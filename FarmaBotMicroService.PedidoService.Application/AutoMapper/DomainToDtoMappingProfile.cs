@@ -12,6 +12,7 @@ namespace FarmaBotMicroService.PedidoService.Application.AutoMapper
         public DomainToDtoMappingProfile()
         {
             CreateMap<Pedido, PedidoDTO>().ReverseMap();
+            CreateMap<ItemPedido, ItemPedidoDTO>().ReverseMap();
             CreateMap<Medicamento, MedicamentoDTO>().ReverseMap();
         }
     }

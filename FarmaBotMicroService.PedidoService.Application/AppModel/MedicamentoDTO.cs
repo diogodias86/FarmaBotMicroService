@@ -10,8 +10,6 @@ namespace FarmaBotMicroService.PedidoService.Application.AppModel
 
         public string Nome { get; set; }
 
-        public decimal Preco { get; set; }
-
-        public PedidoDTO Pedido { get; set; }
+        public ItemPedidoDTO ItemPedido { get; set; }
     }
 }

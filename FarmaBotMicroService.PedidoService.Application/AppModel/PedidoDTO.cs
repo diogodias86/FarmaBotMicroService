@@ -14,6 +14,6 @@ namespace FarmaBotMicroService.PedidoService.Application.AppModel
 
         public string Endereco { get; set; }
 
-        public List<MedicamentoDTO> Medicamentos { get; set; }
+        public List<ItemPedidoDTO> Itens { get; set; }
     }
 }
