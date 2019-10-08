@@ -7,7 +7,7 @@ namespace FarmaBotMicroService.MedicamentoService.Domain.CQRS.Commands
 {
     public class UpdateMedicamentoCommand : MedicamentoCommand
     {
-        public const string ConstQueueName = "add-medicamento-command-queue";
+        public const string ConstQueueName = "update-medicamento-command-queue";
 
         public override string QueueName => ConstQueueName;
 
