@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AzureStorageAccountConnectionString" xml:space="preserve">
-    <value>DefaultEndpointsProtocol=https;AccountName=farmabotstorage;AccountKey=rWHvgbNgAw4QVhjlbCTIDDpceJUa2TBuO1huP0R6f2zyMJE+vFXLHbFDzseJz7AJ/dM9z7wJDVCTqPUBV8ZPng==;EndpointSuffix=core.windows.net</value>
+    <value>STORAGE ACCOUNT</value>
   </data>
   <data name="DbConnectionString" xml:space="preserve">
-    <value>Server=tcp:farmabotserver.database.windows.net,1433;Initial Catalog=FarmaBotPedidoDb;Persist Security Info=False;User ID=farmabot;Password=@Infnet123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;</value>
+    <value>STRING DE CONEXÃO</value>
   </data>
 </root>

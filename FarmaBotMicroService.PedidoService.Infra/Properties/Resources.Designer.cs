@@ -61,7 +61,7 @@ namespace FarmaBotMicroService.PedidoService.Infra.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DefaultEndpointsProtocol=https;AccountName=farmabotstorage;AccountKey=rWHvgbNgAw4QVhjlbCTIDDpceJUa2TBuO1huP0R6f2zyMJE+vFXLHbFDzseJz7AJ/dM9z7wJDVCTqPUBV8ZPng==;EndpointSuffix=core.windows.net.
+        ///   Looks up a localized string similar to STORAGE ACCOUNT.
         /// </summary>
         internal static string AzureStorageAccountConnectionString {
             get {
@@ -70,7 +70,7 @@ namespace FarmaBotMicroService.PedidoService.Infra.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server=tcp:farmabotserver.database.windows.net,1433;Initial Catalog=FarmaBotPedidoDb;Persist Security Info=False;User ID=farmabot;Password=@Infnet123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;.
+        ///   Looks up a localized string similar to STRING DE CONEXÃO.
         /// </summary>
         internal static string DbConnectionString {
             get {

@@ -23,7 +23,7 @@ namespace FarmaBotMicroService.PedidoService.Service.Api.Contexts
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer("Server=tcp:farmabotserver.database.windows.net,1433;Initial Catalog=FarmaBotPedidoDb;Persist Security Info=False;User ID=farmabot;Password=@Infnet123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("STRING DE CONEXÃO");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

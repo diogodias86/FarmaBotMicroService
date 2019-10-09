@@ -61,7 +61,7 @@ namespace FarmaBotMicroService.DiagnosticoService.Infra.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DefaultEndpointsProtocol=https;AccountName=farmabotstorage;AccountKey=rWHvgbNgAw4QVhjlbCTIDDpceJUa2TBuO1huP0R6f2zyMJE+vFXLHbFDzseJz7AJ/dM9z7wJDVCTqPUBV8ZPng==;EndpointSuffix=core.windows.net.
+        ///   Looks up a localized string similar to STORAGE ACCOUNT.
         /// </summary>
         internal static string AzureStorageAccountConnectionString {
             get {

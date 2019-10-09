@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AzureStorageAccountConnectionString" xml:space="preserve">
-    <value>DefaultEndpointsProtocol=https;AccountName=farmabotstorage;AccountKey=rWHvgbNgAw4QVhjlbCTIDDpceJUa2TBuO1huP0R6f2zyMJE+vFXLHbFDzseJz7AJ/dM9z7wJDVCTqPUBV8ZPng==;EndpointSuffix=core.windows.net</value>
+    <value>STORAGE ACCOUNT</value>
   </data>
 </root>
